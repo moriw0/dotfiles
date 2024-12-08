@@ -104,6 +104,7 @@ hash -d r=~/Development/aschild/tsunaren-app/
 hash -d rl=~/Development/aschild/release/tsunaren-app/
 hash -d nvim=~/.config/nvim
 hash -d pls=~/.config/nvim/lua/plugins
+hash -d dot=~/dotfiles
 alias ...='../../'
 
 # Macコマンド
