@@ -15,6 +15,7 @@ export LANG=en_US.UTF-8
 # 各種起動コマンド
 alias ide="bash ~/.tmux-ide.sh"
 alias dcu='docker compose up -d'
+alias dcs='docker compose stop'
 alias rs='bin/rails s'
 alias sk='bundle exec sidekiq -C config/sidekiq.yml'
 alias ngr='ngrok http --domain=daily-probable-grubworm.ngrok-free.app 3000'
@@ -36,21 +37,20 @@ alias mig='bin/rails db:schema:maintain'
 alias capstg='SSH_IDENTITY_FILE="~/.ssh/id_ed25519" branch=master bundle exec cap staging deploy'
 
 #------ tmux 関連 --------
-# 初回シェル時のみ tmux実行
-if [ $SHLVL = 1 ]; then
-  tmux
-fi
 # tmux 設定
-alias vt='vim ~/.tmux.conf'
+alias vt='nvim ~/.tmux.conf'
 alias st='tmux source ~/.tmux.conf'
+
+# nvim 設定
+alias vi='nvim'
+alias ni='nvim ~/.config/nvim/init.vim'
+alias nl='nvim ~/.config/nvim/lua/config/lazy.lua'
 
 # Linuxコマンド
 alias la='ls -a'
 alias ll='ls -l'
 alias vv='vim ~/.vimrc'
-alias ni='nvim ~/.config/nvim/init.vim'
-alias nl='nvim ~/.config/nvim/lua/config/lazy.lua'
-alias vz='vim ~/.zshrc'
+alias vz='nvim ~/.zshrc'
 alias sz='source ~/.zshrc'
 alias h='history'
 
