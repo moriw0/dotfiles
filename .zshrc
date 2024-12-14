@@ -38,6 +38,9 @@ alias capstg='SSH_IDENTITY_FILE="~/.ssh/id_ed25519" branch=master bundle exec ca
 
 #------ tmux 関連 --------
 # tmux 設定
+alias t='tmux'
+alias ta='tmux attach'
+alias tns='tmux new -s'
 alias vt='nvim ~/.tmux.conf'
 alias st='tmux source ~/.tmux.conf'
 
