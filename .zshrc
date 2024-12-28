@@ -115,6 +115,7 @@ alias C='pbcopy'
 
 # Gitエイリアス
 alias gst='git status'
+alias ga='git add'
 alias ga.='git add .'
 alias gd='git diff'
 alias gs='git switch'
@@ -129,6 +130,7 @@ alias gcm='git commit -m'
 alias gco='git commit'
 alias gri='git rebase -i'
 alias grc='git rebase --continue'
+alias grs='git restore --staged'
 alias gc='git checkout'
 alias gb='git branch'
 
