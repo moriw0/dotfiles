@@ -11,6 +11,7 @@ export PGGSSENCMODE="disable"
 export HISTORY_IGNORE="git push *deploy*|git push *heroku*"
 # locale のデフォルト値をセット
 export LANG=en_US.UTF-8
+export EDITOR="nvim"
 
 # 各種起動コマンド
 alias ide="bash ~/.tmux-ide.sh"
@@ -102,7 +103,7 @@ hash -d doq=~/Documents
 hash -d pic=~/Pictures
 hash -d dv=~/Development
 hash -d s=~/Development/aschild/tsunasou-app/
-hash -d d=~/Development/aschild/dialogue-plus-app   
+hash -d d=~/Development/aschild/tsunasou-dialogue-plus-app/
 hash -d r=~/Development/aschild/tsunaren-app/
 hash -d rl=~/Development/aschild/release/tsunaren-app/
 hash -d nvim=~/.config/nvim
@@ -118,6 +119,7 @@ alias gst='git status'
 alias ga='git add'
 alias ga.='git add .'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gs='git switch'
 alias gs-='git switch -'
 alias gsc='git switch -c'
