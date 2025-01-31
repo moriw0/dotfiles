@@ -5,3 +5,11 @@
 	email = shota.morinaga@as-child.com 
 [core]
 	editor = nvim
+[branch]
+	sort = -authordate
+[commit]
+	cleanup = scissors
+[fetch]
+	prune = true
+[push]
+	useForceIfIncludes = true
