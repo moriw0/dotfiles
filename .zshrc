@@ -7,8 +7,6 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@12/lib/pkgconfig"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
 export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH"
 export PGGSSENCMODE="disable"
-# デプロイ関係の履歴を残さない
-export HISTORY_IGNORE="git push *deploy*|git push *heroku*"
 # locale のデフォルト値をセット
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
@@ -33,9 +31,6 @@ alias cspec='COVERAGE=1 bundle exec rspec'
 alias rrg='rails routes | grep'
 alias rc='bin/rails c'
 alias mig='bin/rails db:schema:maintain'
-
-# つな連デプロイコマンド
-alias capstg='SSH_IDENTITY_FILE="~/.ssh/id_ed25519" branch=master bundle exec cap staging deploy'
 
 #------ tmux 関連 --------
 # tmux 設定
@@ -136,10 +131,6 @@ alias grc='git rebase --continue'
 alias grs='git restore --staged'
 alias gc='git checkout'
 alias gb='git branch'
-
-# Dockerエイリアス
-alias dcud='docker compose up -d'
-alias dcs='docker compose stop'
 
 PROMPT="%F{12}%C%f $ "
 RPROMPT="%*"
