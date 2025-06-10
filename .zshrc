@@ -1,12 +1,10 @@
 eval "$(rbenv init - zsh)"
 eval "$(nodenv init - zsh)"
-export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/postgresql@12/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/postgresql@12/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@12/lib/pkgconfig"
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY="YES"
-export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH"
-export PGGSSENCMODE="disable"
+
+if [ -f ~/.zshrc_secret ]; then
+  source ~/.zshrc_secret
+fi
+
 # locale のデフォルト値をセット
 export LANG=en_US.UTF-8
 export EDITOR="nvim"
@@ -15,24 +13,16 @@ export EDITOR="nvim"
 alias ide="bash ~/.tmux-ide.sh"
 alias dcu='docker compose up -d'
 alias dcs='docker compose stop'
+
+# Railsコマンド
 alias rs='bin/rails s'
-alias sk='bundle exec sidekiq -C config/sidekiq.yml'
-alias ngr='ngrok http --domain=daily-probable-grubworm.ngrok-free.app 3000'
-alias pack='bin/webpack-dev-server'
+alias rc='bin/rails c'
+alias rrg='rails routes | grep'
 
 # Rspec関連
 alias spec='bundle exec rspec'
 alias specf='bundle exec rspec --format doc'
-alias paraspe='bundle exec parallel_rspec'
-alias opencov='open coverage/index.html'
-alias cspec='COVERAGE=1 bundle exec rspec'
 
-# Railsコマンド
-alias rrg='rails routes | grep'
-alias rc='bin/rails c'
-alias mig='bin/rails db:schema:maintain'
-
-#------ tmux 関連 --------
 # tmux 設定
 alias t='tmux'
 alias ta='tmux attach'
@@ -97,10 +87,6 @@ hash -d dow=~/Downloads
 hash -d doq=~/Documents
 hash -d pic=~/Pictures
 hash -d dv=~/Development
-hash -d s=~/Development/aschild/tsunasou-app/
-hash -d d=~/Development/aschild/tsunasou-dialogue-plus-app/
-hash -d r=~/Development/aschild/tsunaren-app/
-hash -d rl=~/Development/aschild/release/tsunaren-app/
 hash -d nvim=~/.config/nvim
 hash -d pls=~/.config/nvim/lua/plugins
 hash -d dot=~/dotfiles
