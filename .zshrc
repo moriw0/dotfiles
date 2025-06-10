@@ -30,17 +30,15 @@ alias tns='tmux new -s'
 alias vt='nvim ~/.tmux.conf'
 alias st='tmux source ~/.tmux.conf'
 
-# nvim 設定
-alias vi='nvim'
-alias ni='nvim ~/.config/nvim/init.vim'
-alias nl='nvim ~/.config/nvim/lua/config/lazy.lua'
-
 # Linuxコマンド
+alias vi='nvim'
 alias la='ls -a'
 alias ll='ls -l'
 alias vv='vim ~/.vimrc'
 alias vz='nvim ~/.zshrc'
 alias sz='source ~/.zshrc'
+alias vzs='nvim ~/.zshrc_secret'
+alias szs='source ~/.zshrc_secret'
 alias h='history'
 
 # グローバルエイリアス
@@ -87,8 +85,6 @@ hash -d dow=~/Downloads
 hash -d doq=~/Documents
 hash -d pic=~/Pictures
 hash -d dv=~/Development
-hash -d nvim=~/.config/nvim
-hash -d pls=~/.config/nvim/lua/plugins
 hash -d dot=~/dotfiles
 alias ...='../../'
 
