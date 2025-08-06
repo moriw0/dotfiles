@@ -59,7 +59,7 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 " jjでエスケープ
-inoremap <silent> jj <ESC>
+inoremap <silent> jk <ESC>
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
 "----------------------------------------
