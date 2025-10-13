@@ -44,6 +44,7 @@ alias h='history'
 # グローバルエイリアス
 alias -g G=' | grep'
 alias -g F=' | fzf'
+alias -g X=' | xargs'
 
 ## 直前のコマンドの最後の単語を呼び出す(Esc .)
 autoload smart-insert-last-word
