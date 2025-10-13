@@ -22,6 +22,7 @@ alias rrg='rails routes | grep'
 # Rspec関連
 alias spec='bundle exec rspec'
 alias specf='bundle exec rspec --format doc'
+alias be='bundle exec'
 
 # tmux 設定
 alias t='tmux'
