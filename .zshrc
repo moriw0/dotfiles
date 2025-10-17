@@ -94,6 +94,7 @@ alias ...='../../'
 alias C='pbcopy'
 
 # Gitエイリアス
+alias ggn='git grep -n'
 alias gst='git status'
 alias ga='git add'
 alias ga.='git add .'
