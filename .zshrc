@@ -1,12 +1,14 @@
 eval "$(rbenv init - zsh)"
 eval "$(nodenv init - zsh)"
+export PATH="$HOME/.local/bin:$PATH"
 
 if [ -f ~/.zshrc_secret ]; then
   source ~/.zshrc_secret
 fi
 
 # locale のデフォルト値をセット
-export LANG=en_US.UTF-8
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
 export EDITOR="nvim"
 
 # 各種起動コマンド
