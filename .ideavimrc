@@ -8,6 +8,7 @@
 
 let mapleader = ' '
 set scrolloff=5
+set clipboard+=unnamedplus
 inoremap jk <ESC>
 
 "========================================
