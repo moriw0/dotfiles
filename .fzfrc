@@ -1,0 +1,5 @@
+--layout=reverse
+--border=rounded
+--bind 'ctrl-u:preview-page-up'
+--bind 'ctrl-d:preview-page-down'
+
