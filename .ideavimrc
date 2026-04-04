@@ -3,77 +3,31 @@
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
 
-" Source your .vimrc
-" source ~/.vimrc
-
-"========================================
-" 共通設定
-"========================================
 source ~/dotfiles/vim/common.vim
 
 set scrolloff=5
 
-"----------------------------------------
-" プラグイン
-"----------------------------------------
-
-" Highlight copied text
 Plug 'machakann/vim-highlightedyank'
-" Commentary plugin
 Plug 'tpope/vim-commentary'
-
 Plug 'tpope/vim-surround'
 
-"----------------------------------------
-" JetBrains IDE 用設定
-"----------------------------------------
-" Don't use Ex mode, use Q for formatting.
 map Q gq
 
 nnoremap <Leader>ev :<C-u>vsplit ~/.ideavimrc<CR>
 nnoremap <Leader>sv :<C-u>source ~/.ideavimrc<CR>
 
-" 定義/インタフェースの実装に移動する
-nmap gi <Action>(GotoImplementation)
-
-" ファイル内のGitの変更箇所にジャンプする
-nmap [c <Action>(VcsShowPrevChangeMarker)
-nmap ]c <Action>(VcsShowNextChangeMarker)
-
-" ファイル内のエラー箇所にジャンプする
-nmap [q <Action>(GotoPreviousError)
-nmap ]q <Action>(GotoNextError)
-
-nmap [b <Action>(PreviousTab)
-nmap ]b <Action>(NextTab)
-
-" nmap [m <Action>(EditorCodeBlockStart)
-" nmap ]m <Action>(EditorCodeBlockEnd)
-
-" コードブロックの先頭/末尾に選択範囲を含めて移動する
-nmap [m <Action>(EditorCodeBlockStartWithSelection)
-nmap ]m <Action>(EditorCodeBlockEndWithSelection)
-
-nmap <C-l> <Action>(NextSplitter)
-nmap <C-h> <Action>(PrevSplitter)
-
-nmap <Leader>cp <Action>(CopyContentRootPath)
-
-" プロジェクトビューで現在のファイルを選択する
-nmap <Leader>sp <Action>(SelectInProjectView)
-
-" マウスホバーした時の情報を出す
-nmap <Leader>k <Action>(ShowHoverInfo)
-
-" すべてのツールウィンドウを非表示にする
-nmap <leader>q <Action>(HideAllWindows)
-
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
-
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+nmap gi  <Action>(GotoImplementation)
+nmap [c  <Action>(VcsShowPrevChangeMarker)
+nmap ]c  <Action>(VcsShowNextChangeMarker)
+nmap [q  <Action>(GotoPreviousError)
+nmap ]q  <Action>(GotoNextError)
+nmap [b  <Action>(PreviousTab)
+nmap ]b  <Action>(NextTab)
+nmap [m  <Action>(EditorCodeBlockStartWithSelection)
+nmap ]m  <Action>(EditorCodeBlockEndWithSelection)
+nmap <C-l>       <Action>(NextSplitter)
+nmap <C-h>       <Action>(PrevSplitter)
+nmap <Leader>cp  <Action>(CopyContentRootPath)
+nmap <Leader>sp  <Action>(SelectInProjectView)
+nmap <Leader>k   <Action>(ShowHoverInfo)
+nmap <Leader>q   <Action>(HideAllWindows)
