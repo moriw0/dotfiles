@@ -31,7 +31,6 @@ Jetpack 'tpope/vim-commentary'
 Jetpack 'tpope/vim-unimpaired'
 Jetpack 'morhetz/gruvbox'
 Jetpack 'nelstrom/vim-visual-star-search'
-Jetpack 'nelstrom/vim-qargs'
 call jetpack#end()
 
 "colorscheme evening
