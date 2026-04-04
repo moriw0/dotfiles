@@ -97,6 +97,15 @@ hash -d dv=~/Development
 hash -d dot=~/dotfiles
 alias ...='../../'
 
+# Git Worktree 切り替え
+wt() {
+  local selected
+  selected=$(git worktree list | fzf --layout=reverse \
+    --preview 'git -C {1} log --oneline --color=always -20' \
+    --preview-window=right:60% | awk '{print $1}')
+  [[ -n "$selected" ]] && cd "$selected"
+}
+
 # Macコマンド
 alias C='pbcopy'
 
