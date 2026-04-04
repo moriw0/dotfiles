@@ -1,14 +1,7 @@
 "----------------------------------------
-" 検索
+" 共通設定
 "----------------------------------------
-" 検索結果をハイライト表示
-set hlsearch
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
-set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
-set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
-set incsearch
+source ~/dotfiles/vim/common.vim
 
 "----------------------------------------
 " 表示設定
@@ -19,31 +12,19 @@ set laststatus=2
 set showcmd
 " 対応する括弧を強調表示
 set showmatch
-" 行番号を表示
-set number
 " シンタックスハイライト
 syntax on
 set background=dark
 " 全ての数を10進数として扱う 
 set nrformats=
-" ヤンクでクリップボードにコピー
-" set clipboard=unnamed,autoselect
-set tabstop=2
-set shiftwidth=2
-" 改行時に自動でインデントする
-set smartindent
 " ビープ音を可視化
 set visualbell
-" タブ入力を複数の空白入力に置き換える
-set expandtab
 
 "----------------------------------------
 " ショートカット
 "----------------------------------------
 " \s で空白削除
 nnoremap <leader>s :%s/\s\+//g<CR>
-" Escの2回押しでハイライト消去
-nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 " 直前の置換コマンドを繰り返す
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
@@ -58,8 +39,6 @@ nnoremap う u
 nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
-" jjでエスケープ
-inoremap <silent> jk <ESC>
 " 日本語入力で”っj”と入力してもEnterキーで確定させればインサートモードを抜ける
 inoremap <silent> っj <ESC>
 "----------------------------------------

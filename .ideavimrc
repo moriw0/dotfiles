@@ -6,27 +6,12 @@
 " Source your .vimrc
 " source ~/.vimrc
 
-let mapleader = ' '
-set scrolloff=5
-set clipboard+=unnamedplus
-inoremap jk <ESC>
+"========================================
+" 共通設定
+"========================================
+source ~/dotfiles/vim/common.vim
 
-"========================================
-" .vimrc 共通
-"========================================
-"----------------------------------------
-" 検索
-"----------------------------------------
-" 検索結果をハイライト表示
-set hlsearch
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
-set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
-set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
-set incsearch
-" Escの2回押しでハイライト消去
-nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+set scrolloff=5
 
 "----------------------------------------
 " プラグイン
