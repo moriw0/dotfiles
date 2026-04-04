@@ -38,7 +38,7 @@ alias st='tmux source ~/.tmux.conf'
 
 # Linuxコマンド
 alias vi='nvim'
-alias la='ls -a'
+alias la='ls -la'
 alias ll='ls -l'
 alias vv='vim ~/.vimrc'
 alias vz='nvim ~/.zshrc'
