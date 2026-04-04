@@ -27,8 +27,11 @@ runtime macros/matchit.vim
 packadd vim-jetpack
 call jetpack#begin()
 Jetpack 'tani/vim-jetpack', {'opt': 1}
+" [shared] vim/.vimrc / .ideavimrc で揃えるプラグイン
 Jetpack 'tpope/vim-commentary'
+Jetpack 'tpope/vim-surround'
 Jetpack 'tpope/vim-unimpaired'
+Jetpack 'machakann/vim-highlightedyank'
 Jetpack 'morhetz/gruvbox'
 Jetpack 'nelstrom/vim-visual-star-search'
 call jetpack#end()
