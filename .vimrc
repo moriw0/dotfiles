@@ -32,12 +32,6 @@ Jetpack 'tpope/vim-unimpaired'
 Jetpack 'morhetz/gruvbox'
 Jetpack 'nelstrom/vim-visual-star-search'
 Jetpack 'nelstrom/vim-qargs'
-" Javascript シンタックス
-Jetpack 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-Jetpack 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
-Jetpack 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
-Jetpack 'othree/html5.vim'
-Jetpack 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
 call jetpack#end()
 
 "colorscheme evening
