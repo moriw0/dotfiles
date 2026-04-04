@@ -16,6 +16,8 @@ export EDITOR="nvim"
 alias ide="bash ~/.tmux-ide.sh"
 alias dcu='docker compose up -d'
 alias dcs='docker compose stop'
+alias dce='docker compose exec app'
+alias dcbe='docker compose exec app bundle exec'
 
 # Railsコマンド
 alias rs='bin/rails s'
