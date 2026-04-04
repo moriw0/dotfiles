@@ -4,7 +4,7 @@
 	name = Shota Morinaga
 	email = shota.morinaga@as-child.com 
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /Users/shota/.gitignore_global
 [branch]
 	sort = -authordate
