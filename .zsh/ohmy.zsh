@@ -11,3 +11,4 @@ fi
 ZSH_THEME="eastwood"
 plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
+RPROMPT='%*'
