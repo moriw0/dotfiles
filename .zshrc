@@ -81,18 +81,8 @@ bindkey "^[r" redo
 bindkey "^U" push-line
 
 #-----History関連----
-# 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
-# メモリに保存される履歴の件数
-export HISTSIZE=1000
-# 履歴ファイルに保存される履歴の件数
 export SAVEHIST=100000
-# 重複を記録しない
-setopt hist_ignore_dups
-# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
-setopt hist_ignore_all_dups
-# 余分な空白は詰めて記録
-setopt hist_reduce_blanks
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 #--------------------
@@ -120,32 +110,21 @@ alias C='pbcopy'
 
 # Gitエイリアス
 alias ggn='git grep -n'
-alias gst='git status'
-alias ga='git add'
 alias ga.='git add .'
 alias gap='git add -p'
-alias gau='git add -u'
-alias gd='git diff'
 alias gdd='git diff develop'
-alias gds='git diff --staged'
 alias gdn='git diff --name-only'
 alias gs='git switch'
 alias gs-='git switch -'
 alias gsc='git switch -c'
 alias gsd='git switch develop'
-alias gsh='git stash'
-alias gshl='git stash list'
-alias gshd='git stash drop'
-alias gsha='git stash apply'
+alias gsts='git stash'
 alias grsh='git reset --soft HEAD^'
-alias glo='git log --oneline -10'
 alias gloa='git log --oneline'
-alias gca='git commit --amend'
-alias gcm='git commit -m'
-alias gco='git commit'
+alias gcam='git commit --amend'
+alias gcmm='git commit -m'
+alias gcoo='git commit'
 alias gri='git rebase -i'
 alias grc='git rebase --continue'
 alias grs='git restore --staged'
-alias gc='git checkout'
-alias gb='git branch'
 
