@@ -12,6 +12,7 @@ eval "$(rbenv init - zsh)"
 eval "$(nodenv init - zsh)"
 export PATH="$HOME/.local/bin:$PATH"
 export FZF_DEFAULT_OPTS_FILE=~/.fzfrc
+export LESS="-FRX"
 
 # locale
 export LC_ALL=C.UTF-8
