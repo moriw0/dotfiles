@@ -22,6 +22,9 @@ alias tns='tmux new -s'
 alias vt='nvim ~/.tmux.conf'
 alias st='tmux source ~/.tmux.conf'
 
+# yazi
+alias y='yazi'
+
 # コマンド
 alias vi='nvim'
 alias la='ls -la'

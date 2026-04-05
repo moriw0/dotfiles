@@ -1,3 +1,13 @@
+# yazi shell integration (cd on exit)
+function yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
 eval "$(rbenv init - zsh)"
 eval "$(nodenv init - zsh)"
 export PATH="$HOME/.local/bin:$PATH"
