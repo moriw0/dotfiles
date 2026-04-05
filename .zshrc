@@ -149,5 +149,3 @@ alias grs='git restore --staged'
 alias gc='git checkout'
 alias gb='git branch'
 
-PROMPT="%F{12}%C%f $ "
-RPROMPT="%*"
