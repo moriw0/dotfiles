@@ -3,6 +3,11 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
 fi
 
 export ZSH=$HOME/.oh-my-zsh
+
+if [ ! -d ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting
+fi
+
 ZSH_THEME="eastwood"
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
