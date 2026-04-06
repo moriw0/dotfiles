@@ -1,0 +1,4 @@
+font-size = 20
+
+keybind = shift+page_up=scroll_page_up
+keybind = shift+page_down=scroll_page_down
