@@ -8,7 +8,11 @@ if [ ! -d ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-syntax-highlighting
 fi
 
+if [ ! -d ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-autosuggestions ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-autosuggestions
+fi
+
 ZSH_THEME="eastwood"
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 RPROMPT='%*'
