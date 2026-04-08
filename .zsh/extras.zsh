@@ -25,10 +25,10 @@ autoload smart-insert-last-word
 zle -N insert-last-word smart-insert-last-word
 bindkey '^[.' insert-last-word
 
-## コマンドを vi で編集する (Esc e)
+## コマンドを vi で編集する (Ctrl g)
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey "^[e" edit-command-line
+bindkey "^g" edit-command-line
 
 ## undo, redo (Esc u, r)
 bindkey "^[u" undo
