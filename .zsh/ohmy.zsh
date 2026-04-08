@@ -12,7 +12,11 @@ if [ ! -d ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-autosuggestions ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-autosuggestions
 fi
 
+if [ ! -d ${ZSH_CUSTOM:-$ZSH/custom}/plugins/you-should-use ]; then
+  git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-$ZSH/custom}/plugins/you-should-use
+fi
+
 ZSH_THEME="eastwood"
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions you-should-use)
 source $ZSH/oh-my-zsh.sh
 RPROMPT='%*'
