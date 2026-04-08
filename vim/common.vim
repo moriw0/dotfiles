@@ -10,6 +10,7 @@ set incsearch
 " Editing
 "----------------------------------------
 set number
+set wrap
 set expandtab
 set tabstop=2
 set shiftwidth=2
