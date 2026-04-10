@@ -17,6 +17,6 @@ if [ ! -d ${ZSH_CUSTOM:-$ZSH/custom}/plugins/you-should-use ]; then
 fi
 
 ZSH_THEME="eastwood"
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions you-should-use)
+plugins=(git aliases aws copyfile copypath docker docker-compose zsh-syntax-highlighting zsh-autosuggestions you-should-use)
 source $ZSH/oh-my-zsh.sh
 RPROMPT='%*'
