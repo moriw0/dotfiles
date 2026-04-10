@@ -1,13 +1,3 @@
-# yazi shell integration (cd on exit)
-function yy() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    builtin cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
-
 eval "$(rbenv init - zsh)"
 eval "$(nodenv init - zsh)"
 export PATH="$HOME/.local/bin:$PATH"
@@ -51,12 +41,3 @@ hash -d doq=~/Documents
 hash -d pic=~/Pictures
 hash -d dv=~/Development
 hash -d dot=~/dotfiles
-
-# Git Worktree 切り替え
-wt() {
-  local selected
-  selected=$(git worktree list | fzf --layout=reverse \
-    --preview 'git -C {1} log --oneline --color=always -20' \
-    --preview-window=right:60% | awk '{print $1}')
-  [[ -n "$selected" ]] && cd "$selected"
-}

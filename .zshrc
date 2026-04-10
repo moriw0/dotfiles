@@ -5,3 +5,4 @@ fi
 source ~/.zsh/ohmy.zsh
 source ~/.zsh/alias.zsh
 source ~/.zsh/extras.zsh
+source ~/.zsh/tools.zsh
