@@ -1,5 +1,6 @@
 # プロンプト
-PROMPT='$(git_custom_status)%{$fg[cyan]%}[%c% ]%{$reset_color%}%B$%b '
+PROMPT='$(git_custom_status)%{$fg[cyan]%}[%c]%{$reset_color%}
+%B$%b '
 RPROMPT='%*'
 
 eval "$(rbenv init - zsh)"
