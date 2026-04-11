@@ -1,3 +1,7 @@
+# プロンプト
+PROMPT='$(git_custom_status)%{$fg[cyan]%}[%c% ]%{$reset_color%}%B$%b '
+RPROMPT='%*'
+
 eval "$(rbenv init - zsh)"
 eval "$(nodenv init - zsh)"
 export PATH="$HOME/.local/bin:$PATH"

@@ -19,4 +19,3 @@ fi
 ZSH_THEME="eastwood"
 plugins=(git aliases aws copyfile copypath docker docker-compose zsh-syntax-highlighting zsh-autosuggestions you-should-use)
 source $ZSH/oh-my-zsh.sh
-RPROMPT='%*'
