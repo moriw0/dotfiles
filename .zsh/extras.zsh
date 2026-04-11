@@ -28,6 +28,15 @@ bindkey "^[r" redo
 ## 編集中のコマンドを stash する (^u)
 bindkey "^U" push-line
 
+## kitty keyboard protocol: Ctrl+[ / ESC を ESC として扱う
+_kitty_escape() {
+  local key
+  read -k key
+  zle -U $'\e'"$key"
+}
+zle -N _kitty_escape
+bindkey '\e[91;5u' _kitty_escape
+
 # History
 export HISTFILE=${HOME}/.zsh_history
 export SAVEHIST=100000
