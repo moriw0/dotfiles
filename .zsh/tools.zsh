@@ -88,3 +88,23 @@ ghiw() {
   number="${number#'#'}"
   gh issue view --web "$number"
 }
+
+# GitHub PR を fzf で検索してターミナルで表示
+ghpr() {
+  local prs pr number
+  prs="$(gh pr list)" || return 1
+  pr="$(echo "$prs" | fzf --no-multi)" || return 1
+  number="${pr%%[[:space:]]*}"
+  number="${number#'#'}"
+  gh pr view "$number"
+}
+
+# GitHub PR を fzf で検索してブラウザで表示
+ghprw() {
+  local prs pr number
+  prs="$(gh pr list)" || return 1
+  pr="$(echo "$prs" | fzf --no-multi)" || return 1
+  number="${pr%%[[:space:]]*}"
+  number="${number#'#'}"
+  gh pr view --web "$number"
+}
