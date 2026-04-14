@@ -108,3 +108,29 @@ ghprw() {
   number="${number#'#'}"
   gh pr view --web "$number"
 }
+
+# キーバインド
+# ctrl+o: ghq リポジトリ移動
+_cd_git_repo_widget() { cd_git_repo; zle reset-prompt }
+zle -N _cd_git_repo_widget
+bindkey '^o' _cd_git_repo_widget
+
+# ctrl+f: ディレクトリ移動
+_fd_widget() { fd; zle reset-prompt }
+zle -N _fd_widget
+bindkey '^f' _fd_widget
+
+# alt+f: Git リポジトリ内ディレクトリ移動
+_fdgit_widget() { fdgit; zle reset-prompt }
+zle -N _fdgit_widget
+bindkey '^[f' _fdgit_widget
+
+# alt+b: ブランチ切り替え
+_fbr_widget() { fbr; zle reset-prompt }
+zle -N _fbr_widget
+bindkey '^[b' _fbr_widget
+
+# alt+w: Git Worktree 切り替え
+_wt_widget() { wt; zle reset-prompt }
+zle -N _wt_widget
+bindkey '^[w' _wt_widget
