@@ -109,6 +109,16 @@ ghprw() {
   gh pr view --web "$number"
 }
 
+# GitHub PR を fzf で検索してブラウザで表示（レビュー待ちのものだけ）
+ghprr() {
+  local prs pr number
+  prs="$(gh pr list --json number,title,reviewRequests --jq '.[] | select(.reviewRequests[].login == "moriw0") | "#\(.number) \(.title)"' 2>/dev/null)" || return 1
+  pr="$(echo "$prs" | fzf --no-multi)" || return 1
+  number="${pr%%[[:space:]]*}"
+  number="${number#'#'}"
+  gh pr view --web "$number"
+}
+
 # キーバインド
 # ctrl+o: ghq リポジトリ移動
 _cd_git_repo_widget() { cd_git_repo; zle reset-prompt }
