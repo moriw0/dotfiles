@@ -119,6 +119,29 @@ ghprr() {
   gh pr view --web "$number"
 }
 
+# everything-claude-code プラグインの中身を fzf で検索して vi -R (読み取り専用) で開く
+# - キャッシュ側を直接編集するとプラグイン更新で消えるため、デフォルトは vi -R
+# - バージョンディレクトリ (1.2.0 など) は最新を自動選択
+ecc() {
+  local base="$HOME/.claude/plugins/cache/everything-claude-code/everything-claude-code"
+  local version
+  version=$(/bin/ls "$base" 2>/dev/null | sort -V | tail -1)
+  if [ -z "$version" ]; then
+    echo "everything-claude-code plugin not found under $base" >&2
+    return 1
+  fi
+
+  local file
+  file=$(find "$base/$version" -type f \( -name "*.md" -o -name "SKILL.md" \) 2>/dev/null \
+         | sed "s#$base/$version/##" \
+         | fzf --no-multi --layout=reverse \
+               --prompt "ecc ($version) > " \
+               --preview "bat --color=always --style=plain '$base/$version/{}' 2>/dev/null || cat '$base/$version/{}'" \
+               --preview-window=right:60%)
+  [ -z "$file" ] && return
+  vi -R "$base/$version/$file"
+}
+
 # キーバインド
 # ctrl+o: ghq リポジトリ移動
 _cd_git_repo_widget() { cd_git_repo; zle reset-prompt }
