@@ -121,7 +121,8 @@ ghprr() {
 
 # everything-claude-code プラグインの中身を fzf で検索して vi -R (読み取り専用) で開く
 # - キャッシュ側を直接編集するとプラグイン更新で消えるため、デフォルトは vi -R
-# - バージョンディレクトリ (1.2.0 など) は最新を自動選択
+# - バージョンディレクトリ (2.0.0-rc.1 など) は最新を自動選択
+# - 検索対象は実用ディレクトリ (agents/skills/commands/rules/hooks) + トップレベル md に限定
 ecc() {
   local base="$HOME/.claude/plugins/cache/everything-claude-code/everything-claude-code"
   local version
@@ -131,15 +132,21 @@ ecc() {
     return 1
   fi
 
+  local root="$base/$version"
   local file
-  file=$(find "$base/$version" -type f \( -name "*.md" -o -name "SKILL.md" \) 2>/dev/null \
-         | sed "s#$base/$version/##" \
-         | fzf --no-multi --layout=reverse \
-               --prompt "ecc ($version) > " \
-               --preview "bat --color=always --style=plain '$base/$version/{}' 2>/dev/null || cat '$base/$version/{}'" \
-               --preview-window=right:60%)
+  file=$(
+    {
+      find "$root" -maxdepth 1 -type f -name "*.md" 2>/dev/null
+      find "$root"/{agents,skills,commands,rules,hooks} -type f -name "*.md" 2>/dev/null
+    } \
+    | sed "s#$root/##" \
+    | fzf --no-multi --layout=reverse \
+          --prompt "ecc ($version) > " \
+          --preview "bat --color=always --style=plain '$root/{}' 2>/dev/null || cat '$root/{}'" \
+          --preview-window=right:60%
+  )
   [ -z "$file" ] && return
-  vi -R "$base/$version/$file"
+  vi -R "$root/$file"
 }
 
 # キーバインド
