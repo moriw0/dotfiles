@@ -30,19 +30,19 @@ Detailed guidelines are in `~/.claude/rules/`:
 
 ## Available Agents
 
-Located in `~/.claude/agents/`:
+Provided by the `everything-claude-code` plugin. Source: `~/.claude/plugins/cache/everything-claude-code/everything-claude-code/<version>/agents/`.
 
 | Agent | Purpose |
 |-------|---------|
-| planner | Feature implementation planning |
-| architect | System design and architecture |
-| tdd-guide | Test-driven development |
-| code-reviewer | Code review for quality/security |
-| security-reviewer | Security vulnerability analysis |
-| build-error-resolver | Build error resolution |
-| e2e-runner | Playwright E2E testing |
-| refactor-cleaner | Dead code cleanup |
-| doc-updater | Documentation updates |
+| `everything-claude-code:planner` | Feature implementation planning |
+| `everything-claude-code:architect` | System design and architecture |
+| `everything-claude-code:tdd-guide` | Test-driven development |
+| `everything-claude-code:code-reviewer` | Code review for quality/security |
+| `everything-claude-code:security-reviewer` | Security vulnerability analysis |
+| `everything-claude-code:build-error-resolver` | Build error resolution |
+| `everything-claude-code:e2e-runner` | Playwright E2E testing |
+| `everything-claude-code:refactor-cleaner` | Dead code cleanup |
+| `everything-claude-code:doc-updater` | Documentation updates |
 
 ---
 
