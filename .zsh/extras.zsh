@@ -44,7 +44,12 @@ bindkey '\e[91;5u' _kitty_escape
 
 # History
 export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=100000
 export SAVEHIST=100000
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt INC_APPEND_HISTORY
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
