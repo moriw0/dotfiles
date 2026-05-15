@@ -9,3 +9,5 @@ ln -sf ~/dotfiles/.zsh ~/.zsh
 ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config
 ln -sf ~/dotfiles/duti/settings.xml ~/.config/duti/settings.xml
 duti ~/dotfiles/duti/settings.xml
+
+# brew bundle --file=~/dotfiles/Brewfile
