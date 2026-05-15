@@ -7,3 +7,5 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/nvim ~/.config/nvim
 ln -sf ~/dotfiles/.zsh ~/.zsh
 ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config
+ln -sf ~/dotfiles/duti/settings.xml ~/.config/duti/settings.xml
+duti ~/dotfiles/duti/settings.xml
